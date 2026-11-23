@@ -10,6 +10,8 @@ Working in the U.S. on a visa got harder in 2025–26: a new $100K fee for hirin
 
 Prior audits of AI salary advice changed who the user is (gender, ethnicity, university, migration background). We changed only the user's **visa status**, and checked whether the AI's **written advice and self-explanations match its numbers**.
 
+The second part builds on work showing that LLM explanations can be *unfaithful*: they don't always reflect what actually drove the output (Turpin et al., 2023). We test this in a real-world setting: when a model gives visa holders a lower salary, does its explanation say so?
+
 ## Questions
 
 1. Does visa status change the suggested salary?
@@ -24,7 +26,7 @@ Prior audits of AI salary advice changed who the user is (gender, ethnicity, uni
 - **English style changes the advice, not the salary.** For U.S. citizens, 7 of 20 Korean-L1-style answers brought up immigration; 0 of 20 fluent answers did.
 - **The AI doesn't admit the gap.** In 0 of 80 visa answers did it say the visa lowered its number. When asked directly, it said "the same" in 32 of 32 chats, while the F-1 OPT number was actually lower in 8 of 8.
 
-Asking the AI does not reveal the gap. Comparing answers that differ by one sentence does.
+Asking the AI does not reveal the gap. Comparing answers that differ by one sentence does. This matches the unfaithful-explanation pattern in Turpin et al. (2023), here in salary advice rather than benchmark tasks.
 
 ## Method
 
@@ -108,6 +110,7 @@ Test more models and more runs, add a second coder for the hand codes, and run m
 ## Related work
 
 - Geiger, R. S., O'Sullivan, F., Wang, E., & Lo, J. (2025). Asking an AI for salary negotiation advice is a matter of concern. *PLOS ONE*, 20(2), e0318500.
+- Turpin, M., Michael, J., Perez, E., & Bowman, S. R. (2023). Language Models Don't Always Say What They Think: Unfaithful Explanations in Chain-of-Thought Prompting. *NeurIPS 2023*.
 - Sorokovikova, A., Chizhov, P., Eremenko, I., & Yamshchikov, I. P. (2025). Surface Fairness, Deep Bias: A Comparative Study of Bias in Language Models. *GeBNLP 2025*.
 
 Policy sources: Fragomen (H-1B fee, Sep 2026); DHS proposed rule 91 FR 64566 (OPT fee, Oct 2026); IIE Fall 2026 Snapshot (enrollment).
