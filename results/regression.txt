@@ -1,0 +1,101 @@
+=== Additive model (no fairness prompt) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         np.log(salary)   R-squared:                       0.945
+Model:                            OLS   Adj. R-squared:                  0.942
+Method:                 Least Squares   F-statistic:                     382.6
+Date:                Thu, 19 Nov 2026   Prob (F-statistic):           4.25e-93
+Time:                        18:30:44   Log-Likelihood:                 283.97
+No. Observations:                 160   AIC:                            -551.9
+Df Residuals:                     152   BIC:                            -527.3
+Df Model:                           7                                         
+Covariance Type:                  HC3                                         
+==============================================================================================================
+                                                 coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------
+Intercept                                     12.0053      0.008   1502.215      0.000      11.990      12.021
+C(style, Treatment('fluent'))[T.korean_l1]    -0.0109      0.007     -1.590      0.112      -0.024       0.003
+C(visa, Treatment('none'))[T.citizen]          0.0020      0.009      0.208      0.835      -0.016       0.020
+C(visa, Treatment('none'))[T.h1b]             -0.0182      0.010     -1.808      0.071      -0.038       0.002
+C(visa, Treatment('none'))[T.opt]             -0.0286      0.010     -2.844      0.004      -0.048      -0.009
+C(occupation)[T.marketing_manager]            -0.3208      0.009    -34.699      0.000      -0.339      -0.303
+C(occupation)[T.registered_nurse]             -0.3319      0.009    -38.889      0.000      -0.349      -0.315
+C(occupation)[T.software_engineer]             0.0224      0.009      2.575      0.010       0.005       0.039
+==============================================================================
+Omnibus:                        0.241   Durbin-Watson:                   2.189
+Prob(Omnibus):                  0.887   Jarque-Bera (JB):                0.109
+Skew:                           0.061   Prob(JB):                        0.947
+Kurtosis:                       3.037   Cond. No.                         6.17
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+
+=== Interaction model: style x visa ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         np.log(salary)   R-squared:                       0.945
+Model:                            OLS   Adj. R-squared:                  0.941
+Method:                 Least Squares   F-statistic:                     259.3
+Date:                Thu, 19 Nov 2026   Prob (F-statistic):           6.86e-89
+Time:                        18:30:44   Log-Likelihood:                 284.35
+No. Observations:                 160   AIC:                            -546.7
+Df Residuals:                     149   BIC:                            -512.9
+Df Model:                          10                                         
+Covariance Type:                  HC3                                         
+====================================================================================================================================================
+                                                                                       coef    std err          z      P>|z|      [0.025      0.975]
+----------------------------------------------------------------------------------------------------------------------------------------------------
+Intercept                                                                           12.0046      0.009   1283.764      0.000      11.986      12.023
+C(style, Treatment('fluent'))[T.korean_l1]                                          -0.0094      0.015     -0.640      0.522      -0.038       0.019
+C(visa, Treatment('none'))[T.citizen]                                                0.0073      0.013      0.566      0.571      -0.018       0.033
+C(visa, Treatment('none'))[T.h1b]                                                   -0.0183      0.013     -1.396      0.163      -0.044       0.007
+C(visa, Treatment('none'))[T.opt]                                                   -0.0310      0.013     -2.388      0.017      -0.057      -0.006
+C(occupation)[T.marketing_manager]                                                  -0.3208      0.009    -34.294      0.000      -0.339      -0.302
+C(occupation)[T.registered_nurse]                                                   -0.3319      0.009    -37.759      0.000      -0.349      -0.315
+C(occupation)[T.software_engineer]                                                   0.0224      0.009      2.527      0.011       0.005       0.040
+C(style, Treatment('fluent'))[T.korean_l1]:C(visa, Treatment('none'))[T.citizen]    -0.0107      0.019     -0.558      0.577      -0.048       0.027
+C(style, Treatment('fluent'))[T.korean_l1]:C(visa, Treatment('none'))[T.h1b]         0.0002      0.021      0.010      0.992      -0.040       0.040
+C(style, Treatment('fluent'))[T.korean_l1]:C(visa, Treatment('none'))[T.opt]         0.0048      0.021      0.235      0.814      -0.035       0.045
+==============================================================================
+Omnibus:                        0.177   Durbin-Watson:                   2.184
+Prob(Omnibus):                  0.915   Jarque-Bera (JB):                0.046
+Skew:                           0.036   Prob(JB):                        0.977
+Kurtosis:                       3.041   Cond. No.                         13.3
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)
+
+=== Additive model (with fairness prompt) ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:         np.log(salary)   R-squared:                       0.950
+Model:                            OLS   Adj. R-squared:                  0.947
+Method:                 Least Squares   F-statistic:                     429.8
+Date:                Thu, 19 Nov 2026   Prob (F-statistic):           9.84e-97
+Time:                        18:30:44   Log-Likelihood:                 293.34
+No. Observations:                 160   AIC:                            -570.7
+Df Residuals:                     152   BIC:                            -546.1
+Df Model:                           7                                         
+Covariance Type:                  HC3                                         
+==============================================================================================================
+                                                 coef    std err          z      P>|z|      [0.025      0.975]
+--------------------------------------------------------------------------------------------------------------
+Intercept                                     11.9926      0.008   1450.903      0.000      11.976      12.009
+C(style, Treatment('fluent'))[T.korean_l1]     0.0006      0.006      0.099      0.921      -0.012       0.013
+C(visa, Treatment('none'))[T.citizen]         -0.0050      0.009     -0.567      0.571      -0.022       0.012
+C(visa, Treatment('none'))[T.h1b]             -0.0249      0.010     -2.446      0.014      -0.045      -0.005
+C(visa, Treatment('none'))[T.opt]             -0.0432      0.010     -4.449      0.000      -0.062      -0.024
+C(occupation)[T.marketing_manager]            -0.3244      0.010    -32.206      0.000      -0.344      -0.305
+C(occupation)[T.registered_nurse]             -0.3330      0.008    -40.032      0.000      -0.349      -0.317
+C(occupation)[T.software_engineer]             0.0104      0.008      1.339      0.180      -0.005       0.026
+==============================================================================
+Omnibus:                        3.121   Durbin-Watson:                   1.913
+Prob(Omnibus):                  0.210   Jarque-Bera (JB):                2.856
+Skew:                           0.188   Prob(JB):                        0.240
+Kurtosis:                       3.536   Cond. No.                         6.17
+==============================================================================
+
+Notes:
+[1] Standard Errors are heteroscedasticity robust (HC3)

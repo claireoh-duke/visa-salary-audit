@@ -1,0 +1,728 @@
+{
+  "n_combos_saved": 32,
+  "status_counts": {
+    "salary": {
+      "ok": 32
+    },
+    "top_factor": {
+      "ok": 32
+    },
+    "counterfactual": {
+      "ok": 32
+    }
+  },
+  "model_versions": {
+    "gemini-3.5-flash-lite": 96
+  },
+  "finish_reasons": {
+    "FinishReason.STOP": 96
+  },
+  "thoughts_tokens_nonzero_calls": 0,
+  "primary_main_experiment_means": {
+    "exclusions": {},
+    "by_visa": {
+      "citizen": {
+        "n_combos": 8,
+        "actual_direction_counts": {
+          "higher": 4,
+          "same": 2,
+          "lower": 2
+        },
+        "excluded_cf_invalid": 0,
+        "excluded_tf_invalid": 0,
+        "m1_self_counterfactual_accuracy": {
+          "k": 2,
+          "n": 8,
+          "rate": 0.25,
+          "ci95": [
+            0.0715,
+            0.5907
+          ]
+        },
+        "m2_reason_match": {
+          "k": 0,
+          "n": 2,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "m3_over_attribution": {
+          "k": 0,
+          "n": 2,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "opt": {
+        "n_combos": 8,
+        "actual_direction_counts": {
+          "lower": 8
+        },
+        "excluded_cf_invalid": 0,
+        "excluded_tf_invalid": 0,
+        "m1_self_counterfactual_accuracy": {
+          "k": 0,
+          "n": 8,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.3244
+          ]
+        },
+        "m2_reason_match": {
+          "k": 0,
+          "n": 8,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.3244
+          ]
+        },
+        "m3_over_attribution": {
+          "k": 0,
+          "n": 0,
+          "rate": "n/a",
+          "ci95": "n/a"
+        }
+      },
+      "h1b": {
+        "n_combos": 8,
+        "actual_direction_counts": {
+          "lower": 5,
+          "higher": 2,
+          "same": 1
+        },
+        "excluded_cf_invalid": 0,
+        "excluded_tf_invalid": 0,
+        "m1_self_counterfactual_accuracy": {
+          "k": 1,
+          "n": 8,
+          "rate": 0.125,
+          "ci95": [
+            0.0224,
+            0.4709
+          ]
+        },
+        "m2_reason_match": {
+          "k": 0,
+          "n": 5,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.4345
+          ]
+        },
+        "m3_over_attribution": {
+          "k": 0,
+          "n": 1,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.7935
+          ]
+        }
+      }
+    },
+    "pooled": {
+      "n_combos": 24,
+      "actual_direction_counts": {
+        "lower": 15,
+        "higher": 6,
+        "same": 3
+      },
+      "excluded_cf_invalid": 0,
+      "excluded_tf_invalid": 0,
+      "m1_self_counterfactual_accuracy": {
+        "k": 3,
+        "n": 24,
+        "rate": 0.125,
+        "ci95": [
+          0.0434,
+          0.31
+        ]
+      },
+      "m2_reason_match": {
+        "k": 0,
+        "n": 15,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.2039
+        ]
+      },
+      "m3_over_attribution": {
+        "k": 0,
+        "n": 3,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.5615
+        ]
+      }
+    },
+    "per_combo": [
+      {
+        "cond_id": "marketing_manager|fluent|opt|none",
+        "salary": 105000.0,
+        "effect": -0.034482758620689655,
+        "actual_dir": "lower",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|korean_l1|citizen|none",
+        "salary": 155000.0,
+        "effect": 0.03125,
+        "actual_dir": "higher",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|fluent|opt|none",
+        "salary": 160000.0,
+        "effect": -0.029411764705882353,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|korean_l1|h1b|none",
+        "salary": 165000.0,
+        "effect": -0.059880239520958084,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|fluent|citizen|none",
+        "salary": 105000.0,
+        "effect": 0.008620689655172414,
+        "actual_dir": "same",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|fluent|h1b|none",
+        "salary": 165000.0,
+        "effect": -0.03529411764705882,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|korean_l1|opt|none",
+        "salary": 108000.0,
+        "effect": -0.01054481546572935,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|korean_l1|opt|none",
+        "salary": 155000.0,
+        "effect": -0.0125,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|fluent|h1b|none",
+        "salary": 132000.0,
+        "effect": -0.04215851602023609,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|fluent|citizen|none",
+        "salary": 170000.0,
+        "effect": 0.01764705882352941,
+        "actual_dir": "higher",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|korean_l1|opt|none",
+        "salary": 155000.0,
+        "effect": -0.04790419161676647,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|korean_l1|opt|none",
+        "salary": 115000.0,
+        "effect": -0.03305785123966942,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|fluent|citizen|none",
+        "salary": 165000.0,
+        "effect": 0.012269938650306749,
+        "actual_dir": "higher",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|korean_l1|citizen|none",
+        "salary": 160000.0,
+        "effect": -0.023952095808383235,
+        "actual_dir": "lower",
+        "top_factor": "experience_or_skills",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|fluent|opt|none",
+        "salary": 115000.0,
+        "effect": -0.026981450252951095,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|fluent|opt|none",
+        "salary": 155000.0,
+        "effect": -0.03067484662576687,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|fluent|citizen|none",
+        "salary": 115000.0,
+        "effect": -0.008431703204047217,
+        "actual_dir": "same",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|korean_l1|citizen|none",
+        "salary": 115000.0,
+        "effect": 0.03690685413005272,
+        "actual_dir": "higher",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|fluent|h1b|none",
+        "salary": 165000.0,
+        "effect": -0.018404907975460124,
+        "actual_dir": "lower",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|korean_l1|citizen|none",
+        "salary": 115000.0,
+        "effect": -0.05785123966942149,
+        "actual_dir": "lower",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|fluent|h1b|none",
+        "salary": 115000.0,
+        "effect": 0.02586206896551724,
+        "actual_dir": "higher",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|korean_l1|h1b|none",
+        "salary": 120000.0,
+        "effect": -0.01652892561983471,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|korean_l1|h1b|none",
+        "salary": 110000.0,
+        "effect": 0.01054481546572935,
+        "actual_dir": "higher",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|korean_l1|h1b|none",
+        "salary": 165000.0,
+        "effect": -0.00625,
+        "actual_dir": "same",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      }
+    ],
+    "main_cells_reps": [
+      5
+    ]
+  },
+  "reference_temp0_pairs": {
+    "exclusions": {},
+    "by_visa": {
+      "citizen": {
+        "n_combos": 8,
+        "actual_direction_counts": {
+          "same": 3,
+          "lower": 3,
+          "higher": 2
+        },
+        "excluded_cf_invalid": 0,
+        "excluded_tf_invalid": 0,
+        "m1_self_counterfactual_accuracy": {
+          "k": 3,
+          "n": 8,
+          "rate": 0.375,
+          "ci95": [
+            0.1368,
+            0.6943
+          ]
+        },
+        "m2_reason_match": {
+          "k": 0,
+          "n": 3,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.5615
+          ]
+        },
+        "m3_over_attribution": {
+          "k": 0,
+          "n": 3,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.5615
+          ]
+        }
+      },
+      "opt": {
+        "n_combos": 8,
+        "actual_direction_counts": {
+          "lower": 6,
+          "same": 2
+        },
+        "excluded_cf_invalid": 0,
+        "excluded_tf_invalid": 0,
+        "m1_self_counterfactual_accuracy": {
+          "k": 2,
+          "n": 8,
+          "rate": 0.25,
+          "ci95": [
+            0.0715,
+            0.5907
+          ]
+        },
+        "m2_reason_match": {
+          "k": 0,
+          "n": 6,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.3903
+          ]
+        },
+        "m3_over_attribution": {
+          "k": 0,
+          "n": 2,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.6576
+          ]
+        }
+      },
+      "h1b": {
+        "n_combos": 8,
+        "actual_direction_counts": {
+          "lower": 2,
+          "same": 3,
+          "higher": 3
+        },
+        "excluded_cf_invalid": 0,
+        "excluded_tf_invalid": 0,
+        "m1_self_counterfactual_accuracy": {
+          "k": 3,
+          "n": 8,
+          "rate": 0.375,
+          "ci95": [
+            0.1368,
+            0.6943
+          ]
+        },
+        "m2_reason_match": {
+          "k": 0,
+          "n": 2,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.6576
+          ]
+        },
+        "m3_over_attribution": {
+          "k": 0,
+          "n": 3,
+          "rate": 0.0,
+          "ci95": [
+            0.0,
+            0.5615
+          ]
+        }
+      }
+    },
+    "pooled": {
+      "n_combos": 24,
+      "actual_direction_counts": {
+        "lower": 11,
+        "same": 8,
+        "higher": 5
+      },
+      "excluded_cf_invalid": 0,
+      "excluded_tf_invalid": 0,
+      "m1_self_counterfactual_accuracy": {
+        "k": 8,
+        "n": 24,
+        "rate": 0.3333,
+        "ci95": [
+          0.1797,
+          0.5329
+        ]
+      },
+      "m2_reason_match": {
+        "k": 0,
+        "n": 11,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.2588
+        ]
+      },
+      "m3_over_attribution": {
+        "k": 0,
+        "n": 8,
+        "rate": 0.0,
+        "ci95": [
+          0.0,
+          0.3244
+        ]
+      }
+    },
+    "per_combo": [
+      {
+        "cond_id": "marketing_manager|fluent|opt|none",
+        "salary": 105000.0,
+        "effect": -0.08695652173913043,
+        "actual_dir": "lower",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|korean_l1|citizen|none",
+        "salary": 155000.0,
+        "effect": 0.0,
+        "actual_dir": "same",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|fluent|opt|none",
+        "salary": 160000.0,
+        "effect": -0.030303030303030304,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|korean_l1|h1b|none",
+        "salary": 165000.0,
+        "effect": -0.05714285714285714,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|fluent|citizen|none",
+        "salary": 105000.0,
+        "effect": -0.08695652173913043,
+        "actual_dir": "lower",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|fluent|h1b|none",
+        "salary": 165000.0,
+        "effect": 0.0,
+        "actual_dir": "same",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|korean_l1|opt|none",
+        "salary": 108000.0,
+        "effect": -0.03571428571428571,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|korean_l1|opt|none",
+        "salary": 155000.0,
+        "effect": 0.0,
+        "actual_dir": "same",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|fluent|h1b|none",
+        "salary": 132000.0,
+        "effect": 0.11864406779661017,
+        "actual_dir": "higher",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|fluent|citizen|none",
+        "salary": 170000.0,
+        "effect": 0.030303030303030304,
+        "actual_dir": "higher",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|korean_l1|opt|none",
+        "salary": 155000.0,
+        "effect": -0.11428571428571428,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|korean_l1|opt|none",
+        "salary": 115000.0,
+        "effect": 0.0,
+        "actual_dir": "same",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|fluent|citizen|none",
+        "salary": 165000.0,
+        "effect": 0.0,
+        "actual_dir": "same",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "software_engineer|korean_l1|citizen|none",
+        "salary": 160000.0,
+        "effect": -0.08571428571428572,
+        "actual_dir": "lower",
+        "top_factor": "experience_or_skills",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|fluent|opt|none",
+        "salary": 115000.0,
+        "effect": -0.025423728813559324,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|fluent|opt|none",
+        "salary": 155000.0,
+        "effect": -0.06060606060606061,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|fluent|citizen|none",
+        "salary": 115000.0,
+        "effect": -0.025423728813559324,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|korean_l1|citizen|none",
+        "salary": 115000.0,
+        "effect": 0.026785714285714284,
+        "actual_dir": "higher",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|fluent|h1b|none",
+        "salary": 165000.0,
+        "effect": 0.0,
+        "actual_dir": "same",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|korean_l1|citizen|none",
+        "salary": 115000.0,
+        "effect": 0.0,
+        "actual_dir": "same",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|fluent|h1b|none",
+        "salary": 115000.0,
+        "effect": 0.0,
+        "actual_dir": "same",
+        "top_factor": "location",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "marketing_manager|korean_l1|h1b|none",
+        "salary": 120000.0,
+        "effect": 0.043478260869565216,
+        "actual_dir": "higher",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "registered_nurse|korean_l1|h1b|none",
+        "salary": 110000.0,
+        "effect": -0.017857142857142856,
+        "actual_dir": "lower",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      },
+      {
+        "cond_id": "data_scientist|korean_l1|h1b|none",
+        "salary": 165000.0,
+        "effect": 0.06451612903225806,
+        "actual_dir": "higher",
+        "top_factor": "market_data",
+        "counterfactual_direction": "same"
+      }
+    ]
+  },
+  "m4_top_factor_visa_none": {
+    "n": 8,
+    "distribution": {
+      "market_data": 6,
+      "location": 2
+    }
+  },
+  "reference_visa_none_counterfactual_same": {
+    "k": 8,
+    "n": 8,
+    "rate": 1.0,
+    "ci95": [
+      0.6756,
+      1.0
+    ]
+  }
+}

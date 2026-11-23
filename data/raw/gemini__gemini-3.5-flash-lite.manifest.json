@@ -1,0 +1,50 @@
+{
+  "runs": [
+    {
+      "started_utc": "2026-11-19T22:46:05.380287+00:00",
+      "argv": [
+        "src/run_experiment.py",
+        "--provider",
+        "gemini",
+        "--model",
+        "gemini-3.5-flash-lite",
+        "--reps",
+        "5",
+        "--rpm",
+        "8",
+        "--seed",
+        "42"
+      ],
+      "provider": "gemini",
+      "model": "gemini-3.5-flash-lite",
+      "model_info": {
+        "name": "models/gemini-3.5-flash-lite",
+        "display_name": "Gemini 3.5 Flash Lite",
+        "version": "3.5-flash-lite-07-2026"
+      },
+      "reps": 5,
+      "seed": 42,
+      "rpm": 8.0,
+      "workers": 1,
+      "no_mitigation": false,
+      "limit": null,
+      "calls_planned": 320,
+      "gen_config": {
+        "temperature": 1.0,
+        "thinking": "provider default (not set)"
+      },
+      "git_commit": null,
+      "file_sha256": {
+        "prompts.py": "27d2ae16ff8af9be6084efb03961a836f8f7f2a202cf3c99123de566f69ee7e2",
+        "run_experiment.py": "3545c8a359917fdc6b97e5bdab2ff6db27037988bd496e09eb1e578c76f90d9d",
+        "providers.py": "f7b35d61e48b798aa66a91b79dfe78e3071aace9063936876bcaa2496a8474c7"
+      },
+      "python": "3.9.6",
+      "sdk_versions": {
+        "google-genai": "1.47.0",
+        "boto3": "1.42.97",
+        "botocore": "1.42.97"
+      }
+    }
+  ]
+}
