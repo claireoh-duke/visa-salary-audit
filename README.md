@@ -17,9 +17,9 @@ Prior audits of AI salary advice changed who the user is (gender, ethnicity, uni
 | | Question | Where |
 |---|---|---|
 | RQ1 | Does visa status change the suggested salary? | Figure A |
-| RQ2 | Does Korean-L1-style English change it? | Figure B |
+| RQ2 | Does Korean-L1-style English change it? | Results |
 | RQ3 | Does asking the AI to be fair help? | Figure A |
-| RQ4 | Does the AI's explanation match its numbers? | Figure C |
+| RQ4 | Does the AI's explanation match its numbers? | Results, Follow-up |
 
 ## Method: counterfactual test
 
@@ -46,19 +46,9 @@ Analysis:
 
 ![Figure A: salary change by visa status and fairness line](docs/figures/fig_a_salary_change.png)
 
-| | Change vs. no visa mention (fairness off) | With fairness line |
-|---|---|---|
-| U.S. citizen | +0.2% | −0.5% |
-| F-1 OPT | **−2.8%*** (95% CI −4.7 to −0.9), about $4,050 less | **−4.2%*** |
-| Needs H-1B | −1.8% | **−2.5%*** |
-
-\* significant (p < 0.05). The off-vs-on difference itself was not tested.
-
-![Figure B: U.S. citizens' answers that brought up immigration](docs/figures/fig_b_english_style.png)
-
+- **Visa status:** F-1 OPT got a **2.8%** lower salary than the no-visa version (95% CI −4.7 to −0.9), about **$4,050** less. Needs H-1B (−1.8%) and U.S. citizen (+0.2%) were not significant.
+- **Fairness line:** did not fix it. With the line, F-1 OPT was −4.2% and Needs H-1B −2.5% (both significant). The off-vs-on difference itself was not tested.
 - **English style:** for U.S. citizens, 7 of 20 Korean-L1-style answers brought up visas or immigration; 0 of 20 fluent answers did. Salary did not change significantly.
-![Figure C: what the advice said about visas and pay](docs/figures/fig_c_words_vs_numbers.png)
-
 - **Words vs. numbers (80 visa answers, hand-coded):**
   - "Don't take less because of your visa": 19
   - "Companies may offer you less": 18
@@ -100,7 +90,7 @@ The advice told visa holders not to take less, but the F-1 OPT number was still 
 ├── docs/                         # GitHub Pages site
 │   ├── index.html                # interactive demo (self-contained, data embedded)
 │   ├── .nojekyll
-│   └── figures/                  # figures A–C used in this README
+│   └── figures/                  # figure used in this README
 ├── data/
 │   ├── parsed.csv                # 320 answers with parsed salary and keyword flags
 │   ├── summary.json              # regression results and cell means
