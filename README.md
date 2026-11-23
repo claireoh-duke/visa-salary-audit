@@ -4,6 +4,19 @@ We asked Gemini 3.5 Flash-Lite the same salary question 320 times, changing only
 
 **Live demo (all figures and examples):** https://claireoh-duke.github.io/visa-salary-audit/
 
+## Why this project
+
+Working in the U.S. on a visa got harder in 2025–26: a new $100K fee for hiring on a new H-1B visa (now on hold in court), a proposed $70K school fee for each student starting OPT, and 15% fewer new international students in fall 2026. These students are negotiating their first U.S. salaries, and some ask AI tools for help.
+
+Prior audits of AI salary advice changed who the user is (gender, ethnicity, university, migration background). We changed only the user's **visa status**, and checked whether the AI's **written advice and self-explanations match its numbers**.
+
+## Questions
+
+1. Does visa status change the suggested salary?
+2. Does Korean-L1-style English change it?
+3. Does telling the AI to be fair help?
+4. Does the AI's explanation match its numbers?
+
 ## Findings
 
 - **Visa status lowers the number.** F-1 OPT users got a 2.8% lower salary than users who didn't mention a visa (95% CI −4.7 to −0.9), about $4,050 less.
@@ -25,6 +38,13 @@ The user asks for salary advice on a New York job offer (master's degree, 3 year
 | Job | Software engineer · Data scientist · Registered nurse · Marketing manager |
 
 64 versions × 5 runs = 320 answers (temperature 1.0, seed 42). Salaries were compared with a regression (job controls, HC3 robust SEs); the 80 visa answers were hand-coded. The follow-up asked 32 chats (temperature 0) what drove the number and whether it would differ without the visa mention; the scoring plan is in `data/followup/`.
+
+**Design choices**
+- **One-sentence swaps** so any salary difference can only come from that sentence.
+- **Temperature 1.0, 5 runs per version** to measure the gap against normal sampling noise.
+- **Hand coding** of the 80 visa answers, because keyword search can't tell "don't take less" from "expect less".
+- **Follow-up chats at temperature 0**, with the scoring plan written before data collection, so the AI's self-explanation is compared with the measured gap, not judged after the fact.
+- **Self-contained demo** (one HTML file, data embedded) so anyone can explore it without a server or API key.
 
 ## Repository
 
@@ -70,14 +90,24 @@ Results will not match exactly: the model is sampled, and hosted models can chan
 
 To view the demo locally, open `docs/index.html` in a browser. It needs no server and no API key.
 
-## Limitations
+## Limitations and risks
 
 - One model, 5 runs per version; 8 follow-up chats per visa status.
-- Hand codes come from one coder.
+- Hand codes come from one coder. The prompt shown in the demo is paraphrased; the exact prompts are in `src/prompts.py`.
 - Temperature 0 was not deterministic (same prompt, salaries 2.6–9.7% apart).
 - The gap shows what the AI advises, not what visa holders are worth.
+
+**Who is affected:** international students, career centers that recommend AI tools, and AI developers. A student may take the lower number as the market rate and ask for less; because the advice sounds neutral, the gap is easy to miss.
+
+**Deployment risk:** with chat memory, a model may know a user's visa status without being told in the current chat.
+
+## Future work
+
+Test more models and more runs, add a second coder for the hand codes, and run more follow-up chats per version.
 
 ## Related work
 
 - Geiger, R. S., O'Sullivan, F., Wang, E., & Lo, J. (2025). Asking an AI for salary negotiation advice is a matter of concern. *PLOS ONE*, 20(2), e0318500.
 - Sorokovikova, A., Chizhov, P., Eremenko, I., & Yamshchikov, I. P. (2025). Surface Fairness, Deep Bias: A Comparative Study of Bias in Language Models. *GeBNLP 2025*.
+
+Policy sources: Fragomen (H-1B fee, Sep 2026); DHS proposed rule 91 FR 64566 (OPT fee, Oct 2026); IIE Fall 2026 Snapshot (enrollment).
